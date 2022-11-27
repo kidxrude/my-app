@@ -3,9 +3,22 @@
     Total distance: {{totalDistance}}
     First date: {{firstDate | date: 'longDate'}}
 </p>
-<ol>
-    <li *ngFor="let session of sessions">
-        {{session.date | date: 'dd-MM-yyyy'}} | {{session.average | number: '1.2-2'}} km/h | {{session.name}} | {{ session.comments}}
-    </li>
-</ol>   
+
+<div class="container">
+    <div *ngFor="let session of sessions" class="row session">
+      <div class="col">
+        {{session.date | date: 'dd-MM-yyyy'}}
+      </div>
+      <div class="col">
+        {{session.average | number: '1.2-2'}} km/h
+      </div>
+      <div class="col">
+        {{session.name}}
+      </div>
+      <div class="col">
+        {{session.comments}}
+      </div>
+    </div>
+  </div>
+
 

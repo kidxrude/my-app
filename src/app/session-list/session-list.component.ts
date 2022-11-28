@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Session } from '../shared/session.model';
 import { SessionService } from '../services/session.service';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @Component({
   selector: 'app-session-list',
@@ -13,6 +14,8 @@ export class SessionListComponent implements OnInit {
   totalSessions: number = 0;
   totalDistance: number = 0;
   firstDate: Date | undefined;
+
+  isOpen = true;
 
   constructor(private sessionService: SessionService) { }
 

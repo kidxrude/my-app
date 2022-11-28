@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
+
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 import { AppComponent } from './app.component';
 import { SessionListComponent } from './session-list/session-list.component';
@@ -15,7 +16,7 @@ import { SessionService } from './services/session.service';
   ],
   imports: [
     BrowserModule,
-    NgbModule
+    TooltipModule.forRoot()
   ],
   providers: [SessionService],
   bootstrap: [AppComponent]

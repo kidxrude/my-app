@@ -1,24 +1,53 @@
-<p>
-    Total sessions: {{totalSessions}}
-    Total distance: {{totalDistance}}
-    First date: {{firstDate | date: 'longDate'}}
-</p>
+<div class="container">
+    <div class="row">
+        <div class="row">
+            <p>
+                Total sessions: {{totalSessions}}
+                Total distance: {{totalDistance}}
+                First date: {{firstDate | date: 'longDate'}}
+            </p>
+        </div>
+    </div>
+</div>
+
 
 <div class="container">
-    <div *ngFor="let session of sessions" class="row session">
-      <div class="col">
-        {{session.date | date: 'dd-MM-yyyy'}}
-      </div>
-      <div class="col">
-        {{session.average | number: '1.2-2'}} km/h
-      </div>
-      <div class="col">
-        {{session.name}}
-      </div>
-      <div class="col">
-        {{session.comments}}
-      </div>
+
+    <div class="row mt-5">
+        <div class="col-sm-12">
+
+            <div class="card">
+            <div class="card-body">
+    
+                <h5 class="card-title">Table</h5>
+    
+                <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Speed</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Spot</th>
+                    <th scope="col">Comments</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let session of sessions">
+                        <th scope="row">{{session.average | number: '1.2-2'}} km/h</th>
+                        <td>
+                            {{session.date | date: 'dd-MM-yyyy'}}
+                        </td>
+                        <td>{{session.name}}</td>
+                        <td>{{session.comments}}</td>   
+                    </tr>
+                </tbody>
+                </table>
+            </div>
+            </div>
+
+        </div>
     </div>
+  
   </div>
+
 
 
